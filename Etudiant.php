@@ -25,7 +25,9 @@ class Etudiant implements IEtudiant{//on a implémenter l'interface pour pouvoir
     }
 
     public function setNom($nouveauNom){
-        $this->nom = $nouveauNom;
+        if(preg_match("/^[A-Za-z]+$/", $nouveauNom))
+            $this->nom = $nouveauNom;
+        else throw new Exception("Vous avez fait une erreur sur la saisie de nom");
     }
 
     public function presenter(){
