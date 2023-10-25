@@ -1,6 +1,6 @@
 <?php
-include('IEtudiant.php');
-class Etudiant implements IEtudiant{
+include('IEtudiant.php');//inclusion d'interface IEtudiant
+class Etudiant implements IEtudiant{//on a implémenter l'interface pour pouvoir définir tout ces méthode
     protected $nom;
     protected $prenom;
     protected $matricule;

@@ -1,5 +1,5 @@
 <?php
-include('Etudiant.php');
+include('Etudiant.php');// inclusion de la classe
 class Professeur extends Etudiant {
 
     private $salaire;
@@ -7,9 +7,9 @@ class Professeur extends Etudiant {
     private $voiture;
 
 
-    public function __construct($nom,$prenom,$matricule,$dateNaissance,$salaire,$specialite,$voiture) {
+    public function __construct($nom,$prenom,$matricule,$dateNaissance,$salaire,$specialite,$voiture) {//notre contuctieur
 
-        parent::__construct($nom,$prenom,$matricule,$dateNaissance);
+        parent::__construct($nom,$prenom,$matricule,$dateNaissance);//constructeur de la classe parent
         $this->salaire = $salaire;
         $this->specialite = $specialite;
         $this->voiture = $voiture;
@@ -26,6 +26,6 @@ class Professeur extends Etudiant {
     
 }
 
-$Professeur = new Professeur("Kane","Samba","0001","22/10/2000",3000000,"Informatique","Oui");
+$Professeur = new Professeur("Kane","Samba","0001","22/10/2000",3000000,"Informatique","Oui");//Création d'un objet
 $Professeur->presenter();
 $Professeur->evaluerEtudiant("30/10/2023");
