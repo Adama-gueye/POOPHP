@@ -16,11 +16,13 @@ class Professeur extends Etudiant {
     }
     public function presenter(){
     
-        echo "Bonjour je m'appelle $this->nom $this->prenom ma date de naissance est $this->dateNaissance et mon matricule est $this->matricule.
+        echo "Bonjour je m'appelle $this->nom $this->prenom mon matricule est $this->matricule.
         Avez-vous une voiture? $this->voiture suis spécialisé dans $this->specialite et mon salaire est $this->salaire <br>";
     }
         public function evaluerEtudiant($dateEvaluation) {
-            echo "J'évaluerais les etudiants le $dateEvaluation InshaAllah <br>";
+            if(preg_match("/^\d{2}\/\d{2}\/\d{4}$/",$dateEvaluation))
+                 echo "J'évaluerais les etudiants le $dateEvaluation InshaAllah <br>";
+            else throw new Exception("Vous avez fait une erreur sur la de date"); 
         
     }
     

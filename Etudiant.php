@@ -37,7 +37,9 @@ class Etudiant implements IEtudiant{//on a implémenter l'interface pour pouvoir
         echo "Bonjour je m'appelle $this->nom et je fais cour sur $cour <br>";
     }
     public function faireEvaluation($evaluation){
-        echo "Je dois faire une evaluation le $evaluation <br>";
+        if(preg_match("/^\d{2}\/\d{2}\/\d{4}$/",$evaluation))
+             echo "Je dois faire une evaluation le $evaluation <br>";
+        else throw new Exception("Vous avez fait une erreur sur la de date");  
     }
 }
 $nom = "Gueye";
