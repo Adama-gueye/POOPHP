@@ -36,11 +36,11 @@ class Etudiant implements IEtudiant{//on a implémenter l'interface pour pouvoir
     public function faireCour($cour){
         echo "Bonjour je m'appelle $this->nom et je fais cour sur $cour <br>";
     }
-    public function faireEvaluation($evaluation){
-        if(preg_match("/^\d{2}\/\d{2}\/\d{4}$/",$evaluation))
-             echo "Je dois faire une evaluation le $evaluation <br>";
-        else throw new Exception("Vous avez fait une erreur sur la de date");  
-    }
+    //  public function faireEvaluation(){
+    // //     if(preg_match("/^\d{2}\/\d{2}\/\d{4}$/",$evaluation))
+    // //          echo "Je dois faire une evaluation le $evaluation <br>";
+    // //     else throw new Exception("Vous avez fait une erreur sur la de date");  
+    //  }
 }
 $nom = "Gueye";
 $prenom = "Adama";
@@ -49,7 +49,6 @@ if(preg_match("/^[A-Za-z]+$/", $nom) && preg_match("/^[A-Za-z]+$/", $prenom)){
     $etudiant->presenter();
     $etudiant->setNom("Aicha");
     $etudiant->faireCour("PHP");
-    $etudiant->faireEvaluation("30/10/2023");
 }else throw new Exception("Vous avez fait une erreur sur la saisie de nom ou du prénom");
 
      
